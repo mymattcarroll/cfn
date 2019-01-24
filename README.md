@@ -27,15 +27,17 @@ $ npm install cfn --save-dev
 
 ```
   Usage
-    cfn deploy {stack name} {template} [--{param key}={param value}...]
+    cfn deploy {stack name} {template} [--capability=CAPABILITY] [--{param key}={param value}...]
     cfn delete {stack name}
     cfn outputs {stack name}
+    cfn output {stack name} {field name}
 
   Examples
     cfn deploy my-stack template.js
-    cfn deploy your_stack template.yml --ImageId=ami-828283 --VpcId=vpc-828283
+    cfn deploy your_stack template.yml --ImageId=ami-828283 --VpcId=vpc-828283 --capability=CAPABILITY_NAMED_IAM --capability=CAPABILITY_AUTO_EXPAND
     cfn delete your_stack
     cfn outputs my-stack
+    cfn output my-stack my-field
 ```
 
 ## Programmatic Usage 
